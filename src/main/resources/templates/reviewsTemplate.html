@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Its Always Sunny In Philadelphia Reviews</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class = "container">
+    <main>
+        <header>
+            <h1>Its Always Sunny In Philadelphia Reviews</h1>
+        </header>
+        <img src="images/cast.jpg" style="width:400px;">
+        <ul>
+        <li th:each="review: ${reviewsModel}"><a th:href="@{/review(id=${review.id})}" th:text="${review.title}"></a></li>
+    </ul>
+    </main>
+    <audio controls>
+        <source src="sunny.mp3" type="audio/mpeg">
+    </audio>
+
+<footer>
+    <small>&copy wcci 2021</small>
+</footer>
+</div>
+</body>
+</html>
